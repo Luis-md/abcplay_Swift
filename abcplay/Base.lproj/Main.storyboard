@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gwa-HD-BIH">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="8Y6-dR-wfn">
+            <objects>
+                <navigationController id="Gwa-HD-BIH" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" backIndicatorImage="chevron.backward.circle" catalog="system" id="g90-1Q-3Ws">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="5uj-I7-8yF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BLH-oo-P3Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-835" y="121"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="abcplay" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ABC _ PLAY" translatesAutoresizingMaskIntoConstraints="NO" id="2CB-0Y-bwa">
+                                <rect key="frame" x="87" y="238" width="240" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Erc-wJ-cF8"/>
+                                    <constraint firstAttribute="height" constant="50" id="yVH-Ai-wWR"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aprenda português de forma dinâmica e divertida!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wqA-XZ-9GF">
+                                <rect key="frame" x="87" y="304" width="240" height="40"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Y27-mb-GYI">
+                                <rect key="frame" x="87" y="360" width="240" height="152"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Usuário" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pwv-GF-apS">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="34"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Senha" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jPj-mU-AcG">
+                                        <rect key="frame" x="0.0" y="42" width="240" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfr-d1-Jf8">
+                                        <rect key="frame" x="0.0" y="84" width="240" height="30"/>
+                                        <color key="backgroundColor" red="0.2627450980392157" green="0.62352941176470589" blue="0.40784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Login">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7P6-QH-RWW">
+                                        <rect key="frame" x="0.0" y="122" width="240" height="30"/>
+                                        <color key="backgroundColor" red="0.10588235294117647" green="0.21568627450980393" blue="0.52156862745098043" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Cadastro">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="registerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vx7-LN-e57"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wWn-aS-uCa">
+                                <rect key="frame" x="179" y="544" width="148" height="30"/>
+                                <state key="normal" title="Esqueceu sua senha?"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Y27-mb-GYI" firstAttribute="trailing" secondItem="2CB-0Y-bwa" secondAttribute="trailing" id="2LD-cY-Uri"/>
+                            <constraint firstItem="2CB-0Y-bwa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="150" id="5A5-i3-vIJ"/>
+                            <constraint firstItem="wWn-aS-uCa" firstAttribute="top" secondItem="Y27-mb-GYI" secondAttribute="bottom" constant="32" id="68T-vD-KBj"/>
+                            <constraint firstItem="wWn-aS-uCa" firstAttribute="trailing" secondItem="Y27-mb-GYI" secondAttribute="trailing" id="7E6-EN-Mzi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="wWn-aS-uCa" secondAttribute="bottom" constant="16" id="CS3-K6-m4v"/>
+                            <constraint firstItem="wqA-XZ-9GF" firstAttribute="leading" secondItem="2CB-0Y-bwa" secondAttribute="leading" id="It6-6j-eAc"/>
+                            <constraint firstItem="2CB-0Y-bwa" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="W4g-h5-PMf"/>
+                            <constraint firstItem="Y27-mb-GYI" firstAttribute="leading" secondItem="2CB-0Y-bwa" secondAttribute="leading" id="eQW-jL-nEg"/>
+                            <constraint firstItem="wqA-XZ-9GF" firstAttribute="top" secondItem="2CB-0Y-bwa" secondAttribute="bottom" constant="16" id="j0w-As-yYv"/>
+                            <constraint firstItem="wqA-XZ-9GF" firstAttribute="trailing" secondItem="2CB-0Y-bwa" secondAttribute="trailing" id="ngx-Ce-6OG"/>
+                            <constraint firstItem="Y27-mb-GYI" firstAttribute="top" secondItem="wqA-XZ-9GF" secondAttribute="bottom" constant="16" id="qO7-jy-AT7"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Vaw-NE-Kxe"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="120.53571428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ABC _ PLAY" width="85" height="10"/>
+        <image name="chevron.backward.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
