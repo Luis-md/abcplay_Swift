@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.2.2)
+  - Arrow (5.1.1)
   - Moya (14.0.0):
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
@@ -15,6 +16,7 @@ PODS:
   - RxSwift (6.0.0-rc.1)
 
 DEPENDENCIES:
+  - Arrow
   - Moya (~> 14.0)
   - NVActivityIndicatorView
   - RxCocoa (= 6.0.0-rc.1)
@@ -23,6 +25,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Arrow
     - Moya
     - NVActivityIndicatorView
     - RxCocoa
@@ -31,12 +34,13 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  Arrow: d6a6fa7eb3fdb3e3aebc7532bc3412e30dabf953
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   NVActivityIndicatorView: 09e48a157e6fc8369636477f9c9aa2f6090993c3
   RxCocoa: a28d75145c07b7547b85faf1e1ad8b25af88a752
   RxRelay: 56abad6d32f73567858506d08735fdb341935b9a
   RxSwift: dae1a32c48148897494b9e2a6b00a68b40694236
 
-PODFILE CHECKSUM: 8ca80c4dccaa6f66f66330f1461d2865f06644ba
+PODFILE CHECKSUM: 6831bac59257f25db3ab4cca623646896761040a
 
 COCOAPODS: 1.9.3

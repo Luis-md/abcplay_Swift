@@ -7,29 +7,25 @@
 //
 
 import UIKit
-
+import NVActivityIndicatorView
 class RegisterViewController: UIViewController {
     @IBOutlet weak var userTxtField: UITextField!
     @IBOutlet weak var emailTxtField: UITextField!
     @IBOutlet weak var passwordTxtField: UITextField!
     @IBOutlet weak var confirmPassword: UITextField!
-    @IBOutlet weak var loadingView: UIView!
+    
+    let loading = LoadingView()
     
     @IBOutlet weak var activity: UIActivityIndicatorView!
     var viewModel: RegisterViewModel = RegisterViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.addCustomBackButton(title: "Voltar")
-        self.activity.isHidden = true
-        self.loadingView.isHidden = true
         // Do any additional setup after loading the view.
     }
     
     @IBAction func registerBtn(_ sender: Any) {
-        self.loadingView.isHidden = false
-        self.activity.isHidden = false
-        self.activity.startAnimating()
-        
+        self.loading.startLoading(vc: self)
         if let user = userTxtField.text,
            let email = emailTxtField.text,
            let password = passwordTxtField.text,
@@ -40,12 +36,14 @@ class RegisterViewController: UIViewController {
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                 self.present(alert, animated: true)
             } else {
-                self.viewModel.createUser(user: user, password: password, email: email) { type in
-                    if(type == true) {
-                        self.loadingView.isHidden = true
-                        self.activity.isHidden = true
-                        self.activity.stopAnimating()
-                        print("user created")
+                self.viewModel.createUser(user: user, password: password, email: email) { (success, error)  in
+                    if let errorResponse = error {
+                        self.loading.stopLoading(vc: self)
+                        let alert = UIAlertController(title: "Erro ❌", message: "Tente novamente mais tarde -> \(errorResponse.localizedDescription)", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                        self.present(alert, animated: true)
+                    } else {
+                        self.loading.stopLoading(vc: self)
                     }
                 }
             }

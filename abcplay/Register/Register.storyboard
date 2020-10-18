@@ -83,37 +83,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kN5-lL-lWi">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
-                            </view>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="70Y-2K-GUG">
-                                <rect key="frame" x="197" y="443" width="20" height="20"/>
-                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TOV-Dq-CSf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="BME-13-b0H" firstAttribute="top" secondItem="N1A-4f-SIU" secondAttribute="bottom" constant="16" id="B1R-lT-kbw"/>
-                            <constraint firstItem="kN5-lL-lWi" firstAttribute="top" secondItem="TXH-uV-v8t" secondAttribute="top" id="KxI-0U-bfu"/>
-                            <constraint firstItem="TOV-Dq-CSf" firstAttribute="trailing" secondItem="kN5-lL-lWi" secondAttribute="trailing" id="MuG-Cz-Hs3"/>
-                            <constraint firstItem="70Y-2K-GUG" firstAttribute="centerX" secondItem="TOV-Dq-CSf" secondAttribute="centerX" id="NJK-Iq-vV0"/>
-                            <constraint firstItem="70Y-2K-GUG" firstAttribute="centerY" secondItem="TOV-Dq-CSf" secondAttribute="centerY" id="Q39-Tk-PMQ"/>
                             <constraint firstItem="gGz-Mk-OZl" firstAttribute="centerX" secondItem="TOV-Dq-CSf" secondAttribute="centerX" id="abv-N1-7zr"/>
                             <constraint firstItem="N1A-4f-SIU" firstAttribute="top" secondItem="gGz-Mk-OZl" secondAttribute="bottom" constant="16" id="b9Z-fx-79X"/>
                             <constraint firstItem="BME-13-b0H" firstAttribute="trailing" secondItem="gGz-Mk-OZl" secondAttribute="trailing" id="ghI-UA-EKK"/>
-                            <constraint firstAttribute="bottom" secondItem="kN5-lL-lWi" secondAttribute="bottom" id="h8R-oj-9Gb"/>
                             <constraint firstItem="N1A-4f-SIU" firstAttribute="leading" secondItem="gGz-Mk-OZl" secondAttribute="leading" id="kTk-hy-mwg"/>
-                            <constraint firstItem="kN5-lL-lWi" firstAttribute="leading" secondItem="TOV-Dq-CSf" secondAttribute="leading" id="oFk-e7-khy"/>
                             <constraint firstItem="gGz-Mk-OZl" firstAttribute="top" secondItem="TOV-Dq-CSf" secondAttribute="top" constant="150" id="tnC-1j-XWt"/>
                             <constraint firstItem="BME-13-b0H" firstAttribute="leading" secondItem="gGz-Mk-OZl" secondAttribute="leading" id="zuE-0o-mLn"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="activity" destination="70Y-2K-GUG" id="A3E-dh-Bi7"/>
                         <outlet property="confirmPassword" destination="nvH-1J-gAo" id="xEX-jz-pEg"/>
                         <outlet property="emailTxtField" destination="uH8-5C-TK1" id="FhX-D1-42l"/>
-                        <outlet property="loadingView" destination="kN5-lL-lWi" id="sND-2x-ZsN"/>
                         <outlet property="passwordTxtField" destination="WuN-wG-AGC" id="agV-7I-39I"/>
                         <outlet property="userTxtField" destination="uH8-5C-TK1" id="iqe-Iw-78d"/>
                     </connections>
@@ -125,9 +110,6 @@
     </scenes>
     <resources>
         <image name="ABC _ PLAY" width="85" height="10"/>
-        <systemColor name="secondarySystemBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

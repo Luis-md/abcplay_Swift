@@ -1,19 +1,18 @@
 //
-//  RegisterViewModel.swift
+//  ViewModel.swift
 //  abcplay
 //
-//  Created by Luis Domingues on 08/10/20.
+//  Created by Luis Domingues on 18/10/20.
 //  Copyright © 2020 Luis Domingues. All rights reserved.
 //
 
 import Foundation
 import Moya
-import Arrow
-class RegisterViewModel {
+class ViewModel {
     let provider = MoyaProvider<MoyaConfig>()
-    
-    func createUser(user: String, password: String, email: String, completion: @escaping (Bool, Error?) -> Void) {
-        self.provider.request(.register(email: email, password: password, name: user, type: "estudante")) { result in
+        
+    func login(email: String, password: String, completion: @escaping (Bool, Error?) -> Void) {
+        self.provider.request(.login(email: email, password: password)) { result in
             switch result {
             case let .success(response):
                 do {
@@ -32,5 +31,4 @@ class RegisterViewModel {
     private func saveToken(token: String) {
         UserDefaults.standard.setValue(token, forKey: "token")
     }
-
 }
