@@ -20,8 +20,7 @@ class ViewController: UIViewController {
         case .success:
             loading.stopLoading(vc: self)
             let vc = HomeViewController()
-            vc.modalPresentationStyle = .fullScreen
-            self.present(vc, animated: true, completion: nil)
+            self.navigationController?.pushViewController(vc, animated: true)
         case .loading:
             loading.startLoading(vc: self)
         case .error:
@@ -51,10 +50,10 @@ class ViewController: UIViewController {
     }
     
     @IBAction func loginBtn(_ sender: Any) {
-        state = .loading
         if let email = emailTxtField.text,
            let password = passwordTextField.text,
            !email.isEmpty && !password.isEmpty {
+            state = .loading
             self.viewModel.login(email: email, password: password) { (success, apiError) in
                 if let error = apiError {
                     self.state = .error

@@ -18,7 +18,20 @@
 		712B01EC250E747200CFB282 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 712B01EB250E747200CFB282 /* Assets.xcassets */; };
 		712B01EF250E747200CFB282 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 712B01ED250E747200CFB282 /* LaunchScreen.storyboard */; };
 		712B01F8250EC2A600CFB282 /* UIViewController_extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712B01F7250EC2A600CFB282 /* UIViewController_extension.swift */; };
+		712E555225582BE400F3BD4E /* QuestoesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E555125582BE400F3BD4E /* QuestoesViewController.swift */; };
+		712E55572558315B00F3BD4E /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E55562558315B00F3BD4E /* QuizViewController.swift */; };
+		712E555B25585D8800F3BD4E /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E555A25585D8800F3BD4E /* QuizViewModel.swift */; };
+		712E55632558636100F3BD4E /* Result.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 712E55622558636100F3BD4E /* Result.storyboard */; };
+		712E55662558677F00F3BD4E /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712E55652558677F00F3BD4E /* ResultViewController.swift */; };
+		714324F8255A1AB700C9044C /* Wrong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 714324F5255A1AB700C9044C /* Wrong.mp3 */; };
+		714324F9255A1AB800C9044C /* Correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 714324F6255A1AB700C9044C /* Correct.mp3 */; };
+		714324FA255A1AB800C9044C /* Beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 714324F7255A1AB700C9044C /* Beep.mp3 */; };
+		714324FE255A1E2300C9044C /* Spy vs Spy - DJ Williams.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 714324FD255A1E2300C9044C /* Spy vs Spy - DJ Williams.mp3 */; };
+		71432505255A238E00C9044C /* Robots a Cometh - Dan Lebowitz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 71432504255A238E00C9044C /* Robots a Cometh - Dan Lebowitz.mp3 */; };
 		7187A422253930BD0049039C /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7187A421253930BD0049039C /* Token.swift */; };
+		7196A6932546116900C55E5C /* Assunto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7196A6922546116900C55E5C /* Assunto.swift */; };
+		7196A697254616B700C55E5C /* SeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7196A696254616B700C55E5C /* SeriesViewController.swift */; };
+		7196A69B254617C100C55E5C /* SeriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7196A69A254617C100C55E5C /* SeriesTableViewCell.swift */; };
 		71A574B1252FE9CF0071F1C3 /* MoyaConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A574B0252FE9CF0071F1C3 /* MoyaConfig.swift */; };
 		71A574B5252FECB80071F1C3 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A574B4252FECB80071F1C3 /* RegisterViewModel.swift */; };
 		71C8E1CC252F2DF3008522E9 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C8E1CB252F2DF3008522E9 /* RegisterViewController.swift */; };
@@ -43,7 +56,20 @@
 		712B01EE250E747200CFB282 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		712B01F0250E747200CFB282 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		712B01F7250EC2A600CFB282 /* UIViewController_extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController_extension.swift; sourceTree = "<group>"; };
+		712E555125582BE400F3BD4E /* QuestoesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestoesViewController.swift; sourceTree = "<group>"; };
+		712E55562558315B00F3BD4E /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		712E555A25585D8800F3BD4E /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
+		712E55622558636100F3BD4E /* Result.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Result.storyboard; sourceTree = "<group>"; };
+		712E55652558677F00F3BD4E /* ResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		714324F5255A1AB700C9044C /* Wrong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Wrong.mp3; sourceTree = "<group>"; };
+		714324F6255A1AB700C9044C /* Correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Correct.mp3; sourceTree = "<group>"; };
+		714324F7255A1AB700C9044C /* Beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Beep.mp3; sourceTree = "<group>"; };
+		714324FD255A1E2300C9044C /* Spy vs Spy - DJ Williams.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Spy vs Spy - DJ Williams.mp3"; sourceTree = "<group>"; };
+		71432504255A238E00C9044C /* Robots a Cometh - Dan Lebowitz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Robots a Cometh - Dan Lebowitz.mp3"; sourceTree = "<group>"; };
 		7187A421253930BD0049039C /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		7196A6922546116900C55E5C /* Assunto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assunto.swift; sourceTree = "<group>"; };
+		7196A696254616B700C55E5C /* SeriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesViewController.swift; sourceTree = "<group>"; };
+		7196A69A254617C100C55E5C /* SeriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesTableViewCell.swift; sourceTree = "<group>"; };
 		71A574B0252FE9CF0071F1C3 /* MoyaConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaConfig.swift; sourceTree = "<group>"; };
 		71A574B4252FECB80071F1C3 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		71C8E1CB252F2DF3008522E9 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +94,7 @@
 		7117386F253C5CAB0059A3ED /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				714324F4255A1A9D00C9044C /* Sounds */,
 				71173874253C5D520059A3ED /* LoadingView.swift */,
 				71FFF936253CD5B500BC02C6 /* AlertDialog.swift */,
 			);
@@ -103,10 +130,9 @@
 		712B01E1250E747100CFB282 /* abcplay */ = {
 			isa = PBXGroup;
 			children = (
+				712E5555255830EC00F3BD4E /* Scenes */,
 				71ECDCD6253B80EA0015B86A /* Application */,
 				7187A416253930450049039C /* Model */,
-				71173883253C720A0059A3ED /* Home */,
-				71C8E1C5252F2D6B008522E9 /* Register */,
 				7117386F253C5CAB0059A3ED /* Utils */,
 				712B01F0250E747200CFB282 /* Info.plist */,
 				712B01F6250EC26400CFB282 /* Extensions */,
@@ -128,13 +154,82 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		712E555025582BC800F3BD4E /* Questoes */ = {
+			isa = PBXGroup;
+			children = (
+				712E555125582BE400F3BD4E /* QuestoesViewController.swift */,
+			);
+			path = Questoes;
+			sourceTree = "<group>";
+		};
+		712E5554255830E000F3BD4E /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				712E55562558315B00F3BD4E /* QuizViewController.swift */,
+				712E555A25585D8800F3BD4E /* QuizViewModel.swift */,
+			);
+			path = Quiz;
+			sourceTree = "<group>";
+		};
+		712E5555255830EC00F3BD4E /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				712E555D2558631C00F3BD4E /* Result */,
+				71173883253C720A0059A3ED /* Home */,
+				71C8E1C5252F2D6B008522E9 /* Register */,
+				712E5554255830E000F3BD4E /* Quiz */,
+				712E555025582BC800F3BD4E /* Questoes */,
+				7196A695254616A700C55E5C /* Assuntos */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		712E555D2558631C00F3BD4E /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				712E55622558636100F3BD4E /* Result.storyboard */,
+				712E55652558677F00F3BD4E /* ResultViewController.swift */,
+			);
+			path = Result;
+			sourceTree = "<group>";
+		};
+		714324F4255A1A9D00C9044C /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				714324F7255A1AB700C9044C /* Beep.mp3 */,
+				714324F5255A1AB700C9044C /* Wrong.mp3 */,
+				714324F6255A1AB700C9044C /* Correct.mp3 */,
+				714324FD255A1E2300C9044C /* Spy vs Spy - DJ Williams.mp3 */,
+				71432504255A238E00C9044C /* Robots a Cometh - Dan Lebowitz.mp3 */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		7187A416253930450049039C /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				7187A421253930BD0049039C /* Token.swift */,
 				71ECDCE5253B833F0015B86A /* User.swift */,
+				7196A6922546116900C55E5C /* Assunto.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		7196A695254616A700C55E5C /* Assuntos */ = {
+			isa = PBXGroup;
+			children = (
+				7196A699254617AD00C55E5C /* AssuntosCell */,
+				7196A696254616B700C55E5C /* SeriesViewController.swift */,
+			);
+			path = Assuntos;
+			sourceTree = "<group>";
+		};
+		7196A699254617AD00C55E5C /* AssuntosCell */ = {
+			isa = PBXGroup;
+			children = (
+				7196A69A254617C100C55E5C /* SeriesTableViewCell.swift */,
+			);
+			path = AssuntosCell;
 			sourceTree = "<group>";
 		};
 		71A574AF252FE9AB0071F1C3 /* Moya */ = {
@@ -231,10 +326,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71432505255A238E00C9044C /* Robots a Cometh - Dan Lebowitz.mp3 in Resources */,
+				714324F9255A1AB800C9044C /* Correct.mp3 in Resources */,
+				714324FA255A1AB800C9044C /* Beep.mp3 in Resources */,
+				712E55632558636100F3BD4E /* Result.storyboard in Resources */,
 				712B01EF250E747200CFB282 /* LaunchScreen.storyboard in Resources */,
 				712B01EC250E747200CFB282 /* Assets.xcassets in Resources */,
+				714324FE255A1E2300C9044C /* Spy vs Spy - DJ Williams.mp3 in Resources */,
 				712B01EA250E747100CFB282 /* Main.storyboard in Resources */,
 				71C8E1CF252F2E0A008522E9 /* Register.storyboard in Resources */,
+				714324F8255A1AB700C9044C /* Wrong.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,16 +348,23 @@
 			files = (
 				71173878253C60BF0059A3ED /* SessionControl.swift in Sources */,
 				7187A422253930BD0049039C /* Token.swift in Sources */,
+				7196A697254616B700C55E5C /* SeriesViewController.swift in Sources */,
 				712B01F8250EC2A600CFB282 /* UIViewController_extension.swift in Sources */,
+				7196A6932546116900C55E5C /* Assunto.swift in Sources */,
 				71C8E1CC252F2DF3008522E9 /* RegisterViewController.swift in Sources */,
+				7196A69B254617C100C55E5C /* SeriesTableViewCell.swift in Sources */,
 				71FFF937253CD5B600BC02C6 /* AlertDialog.swift in Sources */,
 				71173875253C5D520059A3ED /* LoadingView.swift in Sources */,
+				712E55662558677F00F3BD4E /* ResultViewController.swift in Sources */,
 				71173885253C72230059A3ED /* HomeViewController.swift in Sources */,
 				712B01E7250E747100CFB282 /* ViewController.swift in Sources */,
 				7117387B253C67410059A3ED /* ViewModel.swift in Sources */,
 				71A574B5252FECB80071F1C3 /* RegisterViewModel.swift in Sources */,
 				712B01E3250E747100CFB282 /* AppDelegate.swift in Sources */,
 				712B01E5250E747100CFB282 /* SceneDelegate.swift in Sources */,
+				712E55572558315B00F3BD4E /* QuizViewController.swift in Sources */,
+				712E555225582BE400F3BD4E /* QuestoesViewController.swift in Sources */,
+				712E555B25585D8800F3BD4E /* QuizViewModel.swift in Sources */,
 				71C8E1D2252F320C008522E9 /* NavigationController_extension.swift in Sources */,
 				71A574B1252FE9CF0071F1C3 /* MoyaConfig.swift in Sources */,
 				71FFF934253CC97800BC02C6 /* HomeViewModel.swift in Sources */,

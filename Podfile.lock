@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (5.2.2)
-  - Arrow (5.1.1)
+  - FontAwesome.swift (1.9.0)
   - Moya (14.0.0):
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
@@ -16,7 +16,7 @@ PODS:
   - RxSwift (6.0.0-rc.1)
 
 DEPENDENCIES:
-  - Arrow
+  - FontAwesome.swift
   - Moya (~> 14.0)
   - NVActivityIndicatorView
   - RxCocoa (= 6.0.0-rc.1)
@@ -25,7 +25,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
-    - Arrow
+    - FontAwesome.swift
     - Moya
     - NVActivityIndicatorView
     - RxCocoa
@@ -34,13 +34,13 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
-  Arrow: d6a6fa7eb3fdb3e3aebc7532bc3412e30dabf953
+  FontAwesome.swift: a403b88cec950511745ba8f2decd1b6a07346d13
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
   NVActivityIndicatorView: 09e48a157e6fc8369636477f9c9aa2f6090993c3
   RxCocoa: a28d75145c07b7547b85faf1e1ad8b25af88a752
   RxRelay: 56abad6d32f73567858506d08735fdb341935b9a
   RxSwift: dae1a32c48148897494b9e2a6b00a68b40694236
 
-PODFILE CHECKSUM: 6831bac59257f25db3ab4cca623646896761040a
+PODFILE CHECKSUM: 5fc3afe0209f94994fa1a68e2d5a8ef0c94fca2a
 
 COCOAPODS: 1.9.3

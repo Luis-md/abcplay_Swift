@@ -12,6 +12,8 @@ enum MoyaConfig {
     case user
     case login(email: String, password: String)
     case register(email: String, password: String, name: String, type: String)
+    case serie
+    case resultado(title: String, acertos: Int, erros: Int)
 }
 
 extension MoyaConfig: TargetType {
@@ -27,12 +29,16 @@ extension MoyaConfig: TargetType {
             return "/cadastro"
         case .user:
             return "/user"
+        case .serie:
+            return "/serie"
+        case .resultado(_, _, _):
+            return "/desempenho"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .register, .login:
+        case .register, .login, .resultado:
             return .post
         default:
             return .get
@@ -49,6 +55,9 @@ extension MoyaConfig: TargetType {
             return .requestParameters(parameters: ["email": email, "password": password], encoding: JSONEncoding.default)
         case let .register(email, password, name, _):
             return .requestParameters(parameters: ["email": email, "password": password, "name": name, "type": "estudante"], encoding: JSONEncoding.default)
+        case let .resultado(title, acertos, erros):
+            return .requestParameters(parameters: ["title": title, "acertos": acertos, "erros": erros], encoding: JSONEncoding.default)
+
         default:
             return .requestPlain
         }
