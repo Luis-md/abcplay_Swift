@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -39,6 +39,7 @@
                                     <constraint firstAttribute="width" constant="240" id="Erc-wJ-cF8"/>
                                     <constraint firstAttribute="height" constant="50" id="yVH-Ai-wWR"/>
                                 </constraints>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="medium"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aprenda português de forma dinâmica e divertida!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wqA-XZ-9GF">
                                 <rect key="frame" x="87" y="304" width="240" height="40"/>
@@ -106,7 +107,9 @@
                     <navigationItem key="navigationItem" id="Vaw-NE-Kxe"/>
                     <connections>
                         <outlet property="emailTxtField" destination="Pwv-GF-apS" id="4CZ-cr-alF"/>
+                        <outlet property="login" destination="cfr-d1-Jf8" id="nxz-9O-DND"/>
                         <outlet property="passwordTextField" destination="jPj-mU-AcG" id="KKP-5F-htr"/>
+                        <outlet property="register" destination="7P6-QH-RWW" id="XZR-CV-kMx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

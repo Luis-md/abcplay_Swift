@@ -9,8 +9,19 @@
 import Foundation
 
 struct User: Codable {
+    var desempenho: [String:Desempenho]?
     var email: String
     var id: String
     var type: String
     var username: String
 }
+
+extension User {
+    struct Desempenho: Codable {
+        var acertos: Int
+        var erros: Int
+        var title: String
+        var today: String
+    }
+}
+

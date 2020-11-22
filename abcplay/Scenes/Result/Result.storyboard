@@ -78,10 +78,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ab2-C9-Jcd">
-                                <rect key="frame" x="107" y="575" width="200" height="30"/>
+                                <rect key="frame" x="107" y="575" width="200" height="42"/>
                                 <color key="backgroundColor" red="0.26274509800000001" green="0.62352941179999999" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="Quh-p9-rL2"/>
+                                    <constraint firstAttribute="height" constant="42" id="yKV-sZ-rWG"/>
                                 </constraints>
                                 <state key="normal" title="Retornar">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -115,6 +116,8 @@
                         <outlet property="assuntoLabel" destination="yz4-rh-irO" id="xf5-iX-uL4"/>
                         <outlet property="errosLabel" destination="URc-7i-EY2" id="fO6-Xj-5rS"/>
                         <outlet property="fraseLabel" destination="yr0-Fi-R03" id="W92-l9-xsA"/>
+                        <outlet property="returnBtn" destination="ab2-C9-Jcd" id="k6I-BW-b8q"/>
+                        <outlet property="valuesView" destination="VDs-dT-EUV" id="IYO-d8-hsq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="alR-Zv-fqo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

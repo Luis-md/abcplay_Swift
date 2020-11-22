@@ -12,6 +12,9 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var emailTxtField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var login: UIButton!
+    @IBOutlet weak var register: UIButton!
+    
     private var state: State = .ready {
       didSet {
         switch state {
@@ -23,8 +26,13 @@ class ViewController: UIViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         case .loading:
             loading.startLoading(vc: self)
-        case .error:
+        case .error(let msg, let type):
             loading.stopLoading(vc: self)
+            let storyboard = UIStoryboard(name: "Dialog", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "DialogViewController") as! DialogViewController
+            vc.setupDialog(msg: msg, iconType: type)
+            vc.modalPresentationStyle = .overCurrentContext
+            self.present(vc, animated: true, completion: nil)
         }
       }
     }
@@ -39,6 +47,8 @@ class ViewController: UIViewController {
     }
     
     private func initialSetup() {
+        self.login.layer.cornerRadius = 5
+        self.register.layer.cornerRadius = 5
         self.transparentNavigation()
         self.hideKeyboardWhenTappedAround()
     }
@@ -56,11 +66,11 @@ class ViewController: UIViewController {
             state = .loading
             self.viewModel.login(email: email, password: password) { (success, apiError) in
                 if let error = apiError {
-                    self.state = .error
+                    self.state = .error(msg: error.localizedDescription, type: IconType.warning)
                     print(error.localizedDescription)
                 } else {
                     if !success {
-                        self.state = .error
+                        self.state = .error(msg: "Senha ou usuário incorretos", type: IconType.error)
                     } else {
                         self.state = .success
                     }
@@ -75,7 +85,7 @@ extension ViewController {
   enum State {
     case loading
     case ready
-    case error
+    case error(msg: String, type: IconType)
     case success
   }
 }

@@ -43,7 +43,8 @@ class RegisterViewController: UIViewController {
                         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                         self.present(alert, animated: true)
                     } else {
-                        self.loading.stopLoading(vc: self)
+                        let vc = HomeViewController()
+                        self.navigationController?.pushViewController(vc, animated: true)
                     }
                 }
             }

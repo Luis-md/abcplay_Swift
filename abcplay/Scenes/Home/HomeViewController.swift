@@ -35,7 +35,7 @@ class HomeViewController: UIViewController {
     
     let stack: UIStackView = {
         let st = UIStackView(frame: .zero)
-        st.distribution = .fillEqually
+        st.distribution = .fill
         st.alignment = .center
         st.axis = .vertical
         st.translatesAutoresizingMaskIntoConstraints = false
@@ -47,10 +47,11 @@ class HomeViewController: UIViewController {
         let label = UILabel()
         label.textColor = .white
         label.font = UIFont.systemFont(ofSize: 24)
+        label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
+        
     let btnQuiz: UIButton = {
         let btn = UIButton(type: .system)
         btn.setTitle("Escolher assunto", for: .normal)
@@ -90,6 +91,7 @@ class HomeViewController: UIViewController {
     private func initialSetup() {
         self.hideKeyboardWhenTappedAround()
         self.btnQuiz.addTarget(self, action: #selector(loadAssuntos), for: .touchDown)
+        self.btnMenu.addTarget(self, action: #selector(menuAction), for: .touchDown)
     }
     
     private func loadUser() {
@@ -121,6 +123,11 @@ class HomeViewController: UIViewController {
             }
         }
     }
+    @objc private func menuAction() {
+        let storyboard = UIStoryboard(name: "Menu", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension HomeViewController {
@@ -143,7 +150,9 @@ extension HomeViewController {
         
         NSLayoutConstraint.activate([
             self.stack.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            self.stack.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
+            self.stack.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            self.stack.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 24),
+            self.stack.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -24)
         ])
     }
 }

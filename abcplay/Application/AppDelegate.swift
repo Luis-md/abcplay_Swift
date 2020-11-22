@@ -11,18 +11,8 @@ import AVFoundation
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-    var music = AVAudioPlayer()
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let bg = Bundle.main.path(forResource: "Spy vs Spy - DJ Williams", ofType: "mp3")
-        
-        do {
-            self.music = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: bg!))
-        } catch {
-            print(error)
-        }
-        music.play()
         return true
     }
 

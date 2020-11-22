@@ -9,7 +9,6 @@
 import UIKit
 
 class ResultViewController: UIViewController {
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var acertos: Int = 0
     var erros: Int = 0
     var aproveitamento: Double = 0.0
@@ -21,11 +20,14 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var errosLabel: UILabel!
     @IBOutlet weak var aproveitamentoLabel: UILabel!
     @IBOutlet weak var fraseLabel: UILabel!
+    @IBOutlet weak var returnBtn: UIButton!
+    @IBOutlet weak var valuesView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configLabels()
-        appDelegate.music.play()
+        returnBtn.layer.cornerRadius = 5
+        valuesView.layer.cornerRadius = 5
     }
     
     private func configLabels() {
