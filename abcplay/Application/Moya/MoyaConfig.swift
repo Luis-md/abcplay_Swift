@@ -13,6 +13,7 @@ enum MoyaConfig {
     case login(email: String, password: String)
     case register(email: String, password: String, name: String, type: String)
     case serie
+    case getProfessores
     case resultado(title: String, acertos: Int, erros: Int)
 }
 
@@ -33,6 +34,8 @@ extension MoyaConfig: TargetType {
             return "/serie"
         case .resultado(_, _, _):
             return "/desempenho"
+        case .getProfessores:
+            return "/professores"
         }
     }
     

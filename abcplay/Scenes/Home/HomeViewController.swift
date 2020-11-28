@@ -39,14 +39,23 @@ class HomeViewController: UIViewController {
         st.alignment = .center
         st.axis = .vertical
         st.translatesAutoresizingMaskIntoConstraints = false
-        st.spacing = 8
+        st.spacing = 5
         return st
+    }()
+    
+    let img: UIImageView = {
+        let img = UIImageView()
+        img.image = #imageLiteral(resourceName: "ABC _ PLAY")
+        img.contentMode = .scaleAspectFit
+        img.translatesAutoresizingMaskIntoConstraints = false
+        img.heightAnchor.constraint(equalToConstant: 16).isActive = true
+        return img
     }()
     
     let labelTitle: UILabel = {
         let label = UILabel()
-        label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 24)
+        label.textColor = UIColor.Colors.blueTitle
+        label.font = UIFont(name: "Helvetica neue", size: 20)
         label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -54,35 +63,48 @@ class HomeViewController: UIViewController {
         
     let btnQuiz: UIButton = {
         let btn = UIButton(type: .system)
-        btn.setTitle("Escolher assunto", for: .normal)
-        btn.backgroundColor = UIColor(red: 67/255.0, green: 159/255.0, blue: 104/255.0, alpha: 1.0)
+        btn.setTitle("Escolher quiz", for: .normal)
+        btn.backgroundColor = UIColor.Colors.lightBlueButton
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.layer.cornerRadius = 5
         btn.setTitleColor(.white, for: .normal)
-        btn.widthAnchor.constraint(equalToConstant: 170).isActive = true
+        btn.widthAnchor.constraint(equalToConstant: 250).isActive = true
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         return btn
     }()
     
-    let btnMenu: UIButton = {
+    let btnMeusProfessores: UIButton = {
         let btn = UIButton(type: .system)
-        btn.setTitle("Menu", for: .normal)
-        btn.backgroundColor = UIColor(red: 67/255.0, green: 159/255.0, blue: 104/255.0, alpha: 1.0)
+        btn.setTitle("Meus professores", for: .normal)
+        btn.backgroundColor = UIColor.Colors.lightBlueButton
         btn.translatesAutoresizingMaskIntoConstraints = false
         btn.layer.cornerRadius = 5
         btn.setTitleColor(.white, for: .normal)
-        btn.widthAnchor.constraint(equalToConstant: 170).isActive = true
+        btn.widthAnchor.constraint(equalToConstant: 250).isActive = true
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         return btn
     }()
+    
+    let btnDesempenho: UIButton = {
+        let btn = UIButton(type: .system)
+        btn.setTitle("Desempenho", for: .normal)
+        btn.backgroundColor = UIColor.Colors.lightBlueButton
+        btn.translatesAutoresizingMaskIntoConstraints = false
+        btn.layer.cornerRadius = 5
+        btn.setTitleColor(.white, for: .normal)
+        btn.widthAnchor.constraint(equalToConstant: 250).isActive = true
+        btn.titleLabel?.font = UIFont.systemFont(ofSize: 20)
+        return btn
+    }()
+
     
     let loading = LoadingView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.setHidesBackButton(true, animated: true)
-        self.navigationItem.title = "HOME"
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        self.navigationItem.titleView = self.img
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.Colors.blueTitle]
         self.initialSetup()
         self.layout()
         self.loadUser()
@@ -91,7 +113,8 @@ class HomeViewController: UIViewController {
     private func initialSetup() {
         self.hideKeyboardWhenTappedAround()
         self.btnQuiz.addTarget(self, action: #selector(loadAssuntos), for: .touchDown)
-        self.btnMenu.addTarget(self, action: #selector(menuAction), for: .touchDown)
+        self.btnDesempenho.addTarget(self, action: #selector(goToDesempenho), for: .touchDown)
+        self.btnMeusProfessores.addTarget(self, action: #selector(goToProfessores), for: .touchDown)
     }
     
     private func loadUser() {
@@ -123,10 +146,13 @@ class HomeViewController: UIViewController {
             }
         }
     }
-    @objc private func menuAction() {
-        let storyboard = UIStoryboard(name: "Menu", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "MenuViewController") as! MenuViewController
-        navigationController?.pushViewController(vc, animated: true)
+    @objc private func goToDesempenho() {
+        let vc = DesempenhoViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    @objc private func goToProfessores() {
+        let vc = ProfessoresViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -141,18 +167,33 @@ extension HomeViewController {
 
 extension HomeViewController {
     func layout() {
-        self.view.backgroundColor = UIColor(red: 130/255.0, green: 155/255.0, blue: 225/255.0, alpha: 1.0)
+        self.view.backgroundColor = .white
         self.view.addSubview(stack)
-
-        stack.addArrangedSubview(labelTitle)
+        self.view.addSubview(labelTitle)
+        
         stack.addArrangedSubview(btnQuiz)
-        stack.addArrangedSubview(btnMenu)
+        stack.addArrangedSubview(btnMeusProfessores)
+        stack.addArrangedSubview(btnDesempenho)
         
         NSLayoutConstraint.activate([
             self.stack.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             self.stack.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-            self.stack.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 24),
-            self.stack.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -24)
+            self.stack.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 66),
+            self.stack.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -66),
+            
+            self.btnDesempenho.leftAnchor.constraint(equalTo: self.stack.leftAnchor),
+            self.btnDesempenho.rightAnchor.constraint(equalTo: self.stack.rightAnchor),
+
+            self.btnQuiz.leftAnchor.constraint(equalTo: self.stack.leftAnchor),
+            self.btnQuiz.rightAnchor.constraint(equalTo: self.stack.rightAnchor),
+            
+            self.btnMeusProfessores.leftAnchor.constraint(equalTo: self.stack.leftAnchor),
+            self.btnMeusProfessores.rightAnchor.constraint(equalTo: self.stack.rightAnchor),
+            
+            self.labelTitle.bottomAnchor.constraint(equalTo: self.stack.topAnchor, constant: -16),
+            self.labelTitle.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            self.labelTitle.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: 66),
+            self.labelTitle.rightAnchor.constraint(equalTo: self.view.rightAnchor, constant: -66),
         ])
     }
 }

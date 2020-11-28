@@ -31,9 +31,14 @@
 		714324FA255A1AB800C9044C /* Beep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 714324F7255A1AB700C9044C /* Beep.mp3 */; };
 		714324FE255A1E2300C9044C /* Spy vs Spy - DJ Williams.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 714324FD255A1E2300C9044C /* Spy vs Spy - DJ Williams.mp3 */; };
 		71432505255A238E00C9044C /* Robots a Cometh - Dan Lebowitz.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 71432504255A238E00C9044C /* Robots a Cometh - Dan Lebowitz.mp3 */; };
-		7154578A255DEA970082E4AB /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71545789255DEA970082E4AB /* Menu.storyboard */; };
-		7154578D255DED440082E4AB /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7154578C255DED440082E4AB /* MenuViewController.swift */; };
 		7187A422253930BD0049039C /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7187A421253930BD0049039C /* Token.swift */; };
+		7187EF12257286F2005EA4F4 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7187EF11257286F2005EA4F4 /* Colors.swift */; };
+		7187EF172572902F005EA4F4 /* ProfessoresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7187EF162572902F005EA4F4 /* ProfessoresViewController.swift */; };
+		7187EF1E25729050005EA4F4 /* ProfessoresTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7187EF1D25729050005EA4F4 /* ProfessoresTableViewCell.swift */; };
+		7187EF232572988D005EA4F4 /* Professor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7187EF222572988D005EA4F4 /* Professor.swift */; };
+		7187EF2725729D57005EA4F4 /* AddProfessorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7187EF2625729D57005EA4F4 /* AddProfessorViewController.swift */; };
+		7187EF2B25729D72005EA4F4 /* AddProfessorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7187EF2A25729D72005EA4F4 /* AddProfessorViewModel.swift */; };
+		7187EF2F25729D87005EA4F4 /* AddProfessorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7187EF2E25729D87005EA4F4 /* AddProfessorCell.swift */; };
 		7196A6932546116900C55E5C /* Assunto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7196A6922546116900C55E5C /* Assunto.swift */; };
 		7196A697254616B700C55E5C /* SeriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7196A696254616B700C55E5C /* SeriesViewController.swift */; };
 		7196A69B254617C100C55E5C /* SeriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7196A69A254617C100C55E5C /* SeriesTableViewCell.swift */; };
@@ -75,9 +80,14 @@
 		714324F7255A1AB700C9044C /* Beep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Beep.mp3; sourceTree = "<group>"; };
 		714324FD255A1E2300C9044C /* Spy vs Spy - DJ Williams.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Spy vs Spy - DJ Williams.mp3"; sourceTree = "<group>"; };
 		71432504255A238E00C9044C /* Robots a Cometh - Dan Lebowitz.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Robots a Cometh - Dan Lebowitz.mp3"; sourceTree = "<group>"; };
-		71545789255DEA970082E4AB /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
-		7154578C255DED440082E4AB /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		7187A421253930BD0049039C /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		7187EF11257286F2005EA4F4 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		7187EF162572902F005EA4F4 /* ProfessoresViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessoresViewController.swift; sourceTree = "<group>"; };
+		7187EF1D25729050005EA4F4 /* ProfessoresTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfessoresTableViewCell.swift; sourceTree = "<group>"; };
+		7187EF222572988D005EA4F4 /* Professor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Professor.swift; sourceTree = "<group>"; };
+		7187EF2625729D57005EA4F4 /* AddProfessorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProfessorViewController.swift; sourceTree = "<group>"; };
+		7187EF2A25729D72005EA4F4 /* AddProfessorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProfessorViewModel.swift; sourceTree = "<group>"; };
+		7187EF2E25729D87005EA4F4 /* AddProfessorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddProfessorCell.swift; sourceTree = "<group>"; };
 		7196A6922546116900C55E5C /* Assunto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assunto.swift; sourceTree = "<group>"; };
 		7196A696254616B700C55E5C /* SeriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesViewController.swift; sourceTree = "<group>"; };
 		7196A69A254617C100C55E5C /* SeriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeriesTableViewCell.swift; sourceTree = "<group>"; };
@@ -109,6 +119,7 @@
 				712A444C2569826A00CC7BC3 /* Dialog */,
 				714324F4255A1A9D00C9044C /* Sounds */,
 				71173874253C5D520059A3ED /* LoadingView.swift */,
+				7187EF11257286F2005EA4F4 /* Colors.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -196,8 +207,9 @@
 		712E5555255830EC00F3BD4E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				7187EF2525729D44005EA4F4 /* AddProfessor */,
+				7187EF1525729017005EA4F4 /* Professores */,
 				71C25347256A97E60054DB68 /* Desempenho */,
-				71545788255DEA800082E4AB /* Menu */,
 				712E555D2558631C00F3BD4E /* Result */,
 				71173883253C720A0059A3ED /* Home */,
 				71C8E1C5252F2D6B008522E9 /* Register */,
@@ -229,23 +241,50 @@
 			path = Sounds;
 			sourceTree = "<group>";
 		};
-		71545788255DEA800082E4AB /* Menu */ = {
-			isa = PBXGroup;
-			children = (
-				71545789255DEA970082E4AB /* Menu.storyboard */,
-				7154578C255DED440082E4AB /* MenuViewController.swift */,
-			);
-			path = Menu;
-			sourceTree = "<group>";
-		};
 		7187A416253930450049039C /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				7187A421253930BD0049039C /* Token.swift */,
 				71ECDCE5253B833F0015B86A /* User.swift */,
 				7196A6922546116900C55E5C /* Assunto.swift */,
+				7187EF222572988D005EA4F4 /* Professor.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		7187EF1525729017005EA4F4 /* Professores */ = {
+			isa = PBXGroup;
+			children = (
+				7187EF1C25729042005EA4F4 /* cell */,
+				7187EF162572902F005EA4F4 /* ProfessoresViewController.swift */,
+			);
+			path = Professores;
+			sourceTree = "<group>";
+		};
+		7187EF1C25729042005EA4F4 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				7187EF1D25729050005EA4F4 /* ProfessoresTableViewCell.swift */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		7187EF2525729D44005EA4F4 /* AddProfessor */ = {
+			isa = PBXGroup;
+			children = (
+				7187EF2925729D65005EA4F4 /* cell */,
+				7187EF2A25729D72005EA4F4 /* AddProfessorViewModel.swift */,
+				7187EF2625729D57005EA4F4 /* AddProfessorViewController.swift */,
+			);
+			path = AddProfessor;
+			sourceTree = "<group>";
+		};
+		7187EF2925729D65005EA4F4 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				7187EF2E25729D87005EA4F4 /* AddProfessorCell.swift */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 		7196A695254616A700C55E5C /* Assuntos */ = {
@@ -383,7 +422,6 @@
 				712B01EF250E747200CFB282 /* LaunchScreen.storyboard in Resources */,
 				712A444E256982B500CC7BC3 /* Dialog.storyboard in Resources */,
 				712B01EC250E747200CFB282 /* Assets.xcassets in Resources */,
-				7154578A255DEA970082E4AB /* Menu.storyboard in Resources */,
 				714324FE255A1E2300C9044C /* Spy vs Spy - DJ Williams.mp3 in Resources */,
 				712B01EA250E747100CFB282 /* Main.storyboard in Resources */,
 				71C8E1CF252F2E0A008522E9 /* Register.storyboard in Resources */,
@@ -406,15 +444,18 @@
 				7196A6932546116900C55E5C /* Assunto.swift in Sources */,
 				71C8E1CC252F2DF3008522E9 /* RegisterViewController.swift in Sources */,
 				7196A69B254617C100C55E5C /* SeriesTableViewCell.swift in Sources */,
-				7154578D255DED440082E4AB /* MenuViewController.swift in Sources */,
 				71173875253C5D520059A3ED /* LoadingView.swift in Sources */,
 				712E55662558677F00F3BD4E /* ResultViewController.swift in Sources */,
+				7187EF12257286F2005EA4F4 /* Colors.swift in Sources */,
+				7187EF232572988D005EA4F4 /* Professor.swift in Sources */,
 				71173885253C72230059A3ED /* HomeViewController.swift in Sources */,
 				712A44512569860300CC7BC3 /* DialogViewController.swift in Sources */,
 				712B01E7250E747100CFB282 /* ViewController.swift in Sources */,
+				7187EF1E25729050005EA4F4 /* ProfessoresTableViewCell.swift in Sources */,
 				7117387B253C67410059A3ED /* ViewModel.swift in Sources */,
 				71C25350256A98900054DB68 /* DesempenhoCell.swift in Sources */,
 				71A574B5252FECB80071F1C3 /* RegisterViewModel.swift in Sources */,
+				7187EF2725729D57005EA4F4 /* AddProfessorViewController.swift in Sources */,
 				712B01E3250E747100CFB282 /* AppDelegate.swift in Sources */,
 				712B01E5250E747100CFB282 /* SceneDelegate.swift in Sources */,
 				712E55572558315B00F3BD4E /* QuizViewController.swift in Sources */,
@@ -425,6 +466,9 @@
 				71A574B1252FE9CF0071F1C3 /* MoyaConfig.swift in Sources */,
 				71FFF934253CC97800BC02C6 /* HomeViewModel.swift in Sources */,
 				71ECDCE6253B833F0015B86A /* User.swift in Sources */,
+				7187EF2F25729D87005EA4F4 /* AddProfessorCell.swift in Sources */,
+				7187EF2B25729D72005EA4F4 /* AddProfessorViewModel.swift in Sources */,
+				7187EF172572902F005EA4F4 /* ProfessoresViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -48,7 +48,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "17"
                   endingLineNumber = "17"
-                  offsetFromSymbolStart = "343">
+                  offsetFromSymbolStart = "376">
                </Location>
                <Location
                   uuid = "BA43D70D-2AF2-47F7-8122-A26E930BAF56 - c5f127a6e851da6f"
@@ -63,7 +63,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "17"
                   endingLineNumber = "17"
-                  offsetFromSymbolStart = "404">
+                  offsetFromSymbolStart = "437">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -78,8 +78,8 @@
             filePath = "abcplay/Scenes/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "loadUser()"
             landmarkType = "7">
          </BreakpointContent>
@@ -94,8 +94,8 @@
             filePath = "abcplay/Scenes/Home/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "loadUser()"
             landmarkType = "7">
          </BreakpointContent>
@@ -110,13 +110,13 @@
             filePath = "abcplay/Scenes/Desempenho/DesempenhoViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "loadUser()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "AD5E6F0E-51A1-4D65-9438-B27161B2D2B5 - c216318e4d97824b"
+                  uuid = "AD5E6F0E-51A1-4D65-9438-B27161B2D2B5 - c216318e4d9783a8"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -126,12 +126,12 @@
                   urlString = "file:///Users/luisdomingues/Documents/abcplay/abc-play/abcplay/abcplay/Scenes/Desempenho/DesempenhoViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "36"
-                  endingLineNumber = "36"
-                  offsetFromSymbolStart = "110">
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "118">
                </Location>
                <Location
-                  uuid = "AD5E6F0E-51A1-4D65-9438-B27161B2D2B5 - e33e358299769f90"
+                  uuid = "AD5E6F0E-51A1-4D65-9438-B27161B2D2B5 - e33e358299769fb1"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -141,9 +141,9 @@
                   urlString = "file:///Users/luisdomingues/Documents/abcplay/abc-play/abcplay/abcplay/Scenes/Desempenho/DesempenhoViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "37"
-                  endingLineNumber = "37"
-                  offsetFromSymbolStart = "279">
+                  startingLineNumber = "38"
+                  endingLineNumber = "38"
+                  offsetFromSymbolStart = "281">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -158,8 +158,8 @@
             filePath = "abcplay/Scenes/Desempenho/DesempenhoViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "loadUser()"
             landmarkType = "7">
          </BreakpointContent>
@@ -174,8 +174,8 @@
             filePath = "abcplay/Scenes/Desempenho/DesempenhoViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -183,33 +183,113 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A952EA28-FF71-4909-817E-1ED7615DE3D7"
+            uuid = "D97031F2-8A96-4824-AE97-91962FB7CF1A"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "abcplay/Scenes/Desempenho/DesempenhoViewController.swift"
+            filePath = "abcplay/Scenes/Professores/ProfessoresViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "state"
-            landmarkType = "24">
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "loadUser()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D97031F2-8A96-4824-AE97-91962FB7CF1A - 536636a83370988"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "abcplay.ProfessoresViewController.(loadUser in _D33FF62DFB71AA7979744A1DCC4B46A8)() -&gt; ()"
+                  moduleName = "abcplay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luisdomingues/Documents/abcplay/abc-play/abcplay/abcplay/Scenes/Professores/ProfessoresViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "118">
+               </Location>
+               <Location
+                  uuid = "D97031F2-8A96-4824-AE97-91962FB7CF1A - ff7b35ade5c2fe03"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;abcplay.User&gt;, Swift.Bool, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in abcplay.ProfessoresViewController.(loadUser in _D33FF62DFB71AA7979744A1DCC4B46A8)() -&gt; ()"
+                  moduleName = "abcplay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luisdomingues/Documents/abcplay/abc-play/abcplay/abcplay/Scenes/Professores/ProfessoresViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "281">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5604C6DE-B8FD-41DE-9BD7-AD43D9C93CB0"
+            uuid = "0FB7E3C3-E413-4708-947E-719F6C469431"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "abcplay/Scenes/Desempenho/Cell/DesempenhoCell.swift"
+            filePath = "abcplay/Scenes/AddProfessor/AddProfessorViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "bind(acertos:erros:title:date:)"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B5E8FB40-7A30-4114-948F-48B1DCB94CF9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "abcplay/Scenes/Home/HomeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "getAssuntos(completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B5E8FB40-7A30-4114-948F-48B1DCB94CF9 - 8d26624c712df130"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Moya.Response, Moya.MoyaError&gt;) -&gt; () in abcplay.HomeViewModel.getAssuntos(completion: (Swift.Optional&lt;Swift.Array&lt;abcplay.Assunto&gt;&gt;, Swift.Bool, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "abcplay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luisdomingues/Documents/abcplay/abc-play/abcplay/abcplay/Scenes/Home/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "322">
+               </Location>
+               <Location
+                  uuid = "B5E8FB40-7A30-4114-948F-48B1DCB94CF9 - 8d26624c712df130"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Result&lt;Moya.Response, Moya.MoyaError&gt;) -&gt; () in abcplay.HomeViewModel.getAssuntos(completion: (Swift.Optional&lt;Swift.Array&lt;abcplay.Assunto&gt;&gt;, Swift.Bool, Swift.Optional&lt;Swift.Error&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "abcplay"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/luisdomingues/Documents/abcplay/abc-play/abcplay/abcplay/Scenes/Home/HomeViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
+                  offsetFromSymbolStart = "383">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -17,6 +17,7 @@ class HomeViewModel {
             case let .success(response):
                 do {
                     let user = try response.map(User.self)
+                    self.saveId(id: user.id)
                     completion(user, true, nil)
                 } catch {
                     completion(nil, false, nil)
@@ -41,5 +42,8 @@ class HomeViewModel {
                 completion(nil, false, error)
             }
         }
+    }
+    private func saveId(id: String) {
+        UserDefaults.standard.setValue(id, forKey: "id")
     }
 }

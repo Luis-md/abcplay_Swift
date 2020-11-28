@@ -1,13 +1,13 @@
 //
-//  DesempenhoCell.swift
+//  AddProfessorCell.swift
 //  abcplay
 //
-//  Created by Luis Domingues on 22/11/20.
+//  Created by Luis Domingues on 28/11/20.
 //  Copyright © 2020 Luis Domingues. All rights reserved.
 //
 
 import UIKit
-class DesempenhoCell: UITableViewCell {
+class AddProfessorCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -25,46 +25,29 @@ class DesempenhoCell: UITableViewCell {
         return view
     }()
     
-    let acertosLabel: UILabel = {
+    let usernameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Helvetica Neue", size: 20)
         label.textColor = .white
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let removeLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.fontAwesome(ofSize: 24, style: .solid)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
-    let errosLabel: UILabel = {
+    let emailLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Helvetica Neue", size: 20)
         label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
-    
-    let emojiLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.fontAwesome(ofSize: 40, style: .regular)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .white
-        return label
-    }()
-
-    let titleLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: "Helvetica Neue", size: 20)
-        label.textColor = .white
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    let dateLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont(name: "Helvetica Neue", size: 20)
-        label.textColor = .white
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
+        
     let stack: UIStackView = {
         let st = UIStackView(frame: .zero)
         st.distribution = .fill
@@ -75,21 +58,17 @@ class DesempenhoCell: UITableViewCell {
         return st
     }()
     
-    func bind(acertos: Int, erros: Int, title: String, date: String, pos: Int) {
-        self.acertosLabel.text = "Acertos: \(acertos)"
-        self.errosLabel.text = "Erros: \(erros)"
-        self.titleLabel.text = "Título: \(title)"
-        self.dateLabel.text = "Realizado em: \(date)"
+    func bind(name: String, email: String, pos: Int, isAdded: Bool) {
+        self.container.backgroundColor = UIColor.Colors.blueTitle
+        self.usernameLabel.text = name
+        self.emailLabel.text = email
         
-        self.container.backgroundColor = pos % 2 == 0 ? UIColor.Colors.blueTitle : UIColor.Colors.lightBlueButton
-        
-        let aproveitamento = Double((Double(acertos) / Double(acertos + erros)) * 100)
-        if aproveitamento > 80 {
-            self.emojiLabel.text = String.fontAwesomeIcon(name: .laughBeam)
-        } else if aproveitamento < 80 && aproveitamento >= 50 {
-            self.emojiLabel.text = String.fontAwesomeIcon(name: .grinBeamSweat)
+        if isAdded {
+            removeLabel.text = String.fontAwesomeIcon(name: .userMinus)
+            removeLabel.textColor = UIColor.Colors.abcRed
         } else {
-            self.emojiLabel.text = String.fontAwesomeIcon(name: .grimace)
+            removeLabel.text = String.fontAwesomeIcon(name: .userPlus)
+            removeLabel.textColor = UIColor.Colors.abcGreen
         }
     }
     
@@ -100,11 +79,9 @@ class DesempenhoCell: UITableViewCell {
     private func configLayout() {
         self.addSubview(container)
         self.container.addSubview(stack)
-        self.container.addSubview(emojiLabel)
-        self.stack.addArrangedSubview(titleLabel)
-        self.stack.addArrangedSubview(acertosLabel)
-        self.stack.addArrangedSubview(errosLabel)
-        self.stack.addArrangedSubview(dateLabel)
+        self.container.addSubview(removeLabel)
+        self.stack.addArrangedSubview(usernameLabel)
+        self.stack.addArrangedSubview(emailLabel)
         self.backgroundColor = .clear
         
         NSLayoutConstraint.activate([
@@ -113,11 +90,11 @@ class DesempenhoCell: UITableViewCell {
             self.container.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -8),
             self.container.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16),
             
-            self.emojiLabel.centerYAnchor.constraint(equalTo: self.container.centerYAnchor),
-            self.emojiLabel.rightAnchor.constraint(equalTo: self.container.rightAnchor, constant: -16),
+            self.removeLabel.centerYAnchor.constraint(equalTo: self.container.centerYAnchor),
+            self.removeLabel.rightAnchor.constraint(equalTo: self.container.rightAnchor, constant: -16),
             
             self.stack.topAnchor.constraint(equalTo: self.container.topAnchor, constant: 16),
-            self.stack.rightAnchor.constraint(equalTo: self.emojiLabel.leftAnchor, constant: -16),
+            self.stack.rightAnchor.constraint(equalTo: self.removeLabel.leftAnchor, constant: -16),
             self.stack.bottomAnchor.constraint(equalTo: self.container.bottomAnchor, constant: -16),
             self.stack.leftAnchor.constraint(equalTo: self.container.leftAnchor, constant: 16)
         ])

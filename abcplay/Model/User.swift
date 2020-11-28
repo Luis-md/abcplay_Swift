@@ -10,6 +10,7 @@ import Foundation
 
 struct User: Codable {
     var desempenho: [String:Desempenho]?
+    var professores: [String:Professores]?
     var email: String
     var id: String
     var type: String
@@ -22,6 +23,11 @@ extension User {
         var erros: Int
         var title: String
         var today: String
+    }
+    struct Professores: Codable {
+        var _id: String
+        var email: String
+        var username: String
     }
 }
 

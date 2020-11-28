@@ -33,7 +33,7 @@ class QuestoesViewController: UIViewController {
     let tableView: UITableView = {
         let tb = UITableView(frame: .zero, style: .grouped)
         tb.translatesAutoresizingMaskIntoConstraints = false
-        tb.separatorStyle = .singleLine
+        tb.separatorStyle = .none
         tb.backgroundColor = .clear
         tb.register(SeriesTableViewCell.self, forCellReuseIdentifier: "cell")
         return tb
@@ -44,9 +44,9 @@ class QuestoesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.addCustomBackButton(title: "Voltar")
-        self.navigationController?.navigationBar.tintColor = .white
+        self.navigationController?.navigationBar.tintColor = UIColor.Colors.blueTitle
         self.navigationItem.title = "QUESTÕES"
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.Colors.blueTitle]
         self.tableView.delegate = self
         self.tableView.dataSource = self
         self.initialSetup()
@@ -70,7 +70,7 @@ extension QuestoesViewController {
 
 extension QuestoesViewController {
     func layout() {
-        self.view.backgroundColor = UIColor(red: 67/255.0, green: 159/255.0, blue: 104/255.0, alpha: 1.0)
+        self.view.backgroundColor = .white
         self.view.addSubview(tableView)
 
         if #available(iOS 11.0, *) {
@@ -98,7 +98,7 @@ extension QuestoesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let quest = questoes {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! SeriesTableViewCell
-            cell.bind(txt: quest[indexPath.row].title)
+            cell.bind(txt: quest[indexPath.row].title, type: CellType.questoes)
             cell.tintColor = .white
             return cell
         } else {
