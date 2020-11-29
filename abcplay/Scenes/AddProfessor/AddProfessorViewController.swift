@@ -24,8 +24,33 @@ class AddProfessorViewController: UIViewController {
             loading.startLoading(vc: self)
         case .error:
             loading.stopLoading(vc: self)
+        case .deleteProfessor:
+            let vc = self.showDialog()
+            vc.setupDialog(msg: "Professor excluído da sua lista com sucesso",
+                           iconType: .success) {
+                self.loadProfessoresList()
+                vc.dismiss(animated: true, completion: nil)
+            }
+            vc.modalPresentationStyle = .overCurrentContext
+            self.present(vc, animated: true, completion: nil)
+        case .addProfessor:
+            let vc = self.showDialog()
+            vc.setupDialog(msg: "Professor adicionado na sua lista com sucesso",
+                           iconType: .success) {
+                self.loadProfessoresList()
+                vc.dismiss(animated: true, completion: nil)
+            }
+            vc.modalPresentationStyle = .overCurrentContext
+            self.present(vc, animated: true, completion: nil)
         case .empty:
             loading.stopLoading(vc: self)
+            let vc = self.showDialog()
+            vc.setupDialog(msg: "Ocorreu um erro na sua requisição; tente novamente mais tarde",
+                           iconType: .error) {
+                vc.dismiss(animated: true, completion: nil)
+            }
+            vc.modalPresentationStyle = .overCurrentContext
+            self.present(vc, animated: true, completion: nil)
         }
       }
     }
@@ -60,6 +85,7 @@ class AddProfessorViewController: UIViewController {
         tb.separatorStyle = .none
         tb.backgroundColor = .clear
         tb.allowsSelection = false
+        tb.isUserInteractionEnabled = true
         tb.register(AddProfessorCell.self, forCellReuseIdentifier: "cell")
         return tb
     }()
@@ -82,6 +108,17 @@ class AddProfessorViewController: UIViewController {
         self.loadProfessoresList()
         self.hideKeyboardWhenTappedAround()
     }
+    private func addDialog(professor: String) {
+        let storyboard = UIStoryboard(name: "Dialog", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "DialogViewController") as! DialogViewController
+        vc.setupDialog(msg: "Deseja adicionar \(professor) em sua lista de professores",
+                       iconType: .warning) {
+            vc.dismiss(animated: true, completion: nil)
+        }
+        vc.modalPresentationStyle = .overCurrentContext
+        self.present(vc, animated: true, completion: nil)
+
+    }
 }
 
 extension AddProfessorViewController {
@@ -90,6 +127,8 @@ extension AddProfessorViewController {
     case ready([Professor])
     case error
     case success
+    case deleteProfessor
+    case addProfessor
     case empty
   }
 }
@@ -114,6 +153,12 @@ extension AddProfessorViewController {
 //            self.emptyProfessores.leftAnchor.constraint(equalTo: self.view.leftAnchor, constant: -16),
         ])
     }
+    
+    private func showDialog() -> DialogViewController {
+        let storyboard = UIStoryboard(name: "Dialog", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "DialogViewController") as! DialogViewController
+        return vc
+    }
 }
 
 extension AddProfessorViewController: UITableViewDelegate, UITableViewDataSource {
@@ -130,6 +175,7 @@ extension AddProfessorViewController: UITableViewDelegate, UITableViewDataSource
             var isAdded = false
             let now = professoresList[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! AddProfessorCell
+            cell.delegate = self
             if let alunos = now.alunos {
                 for (key, _) in alunos {
                     var tempAdd = key == UserDefaults.standard.string(forKey: "id")!
@@ -138,7 +184,12 @@ extension AddProfessorViewController: UITableViewDelegate, UITableViewDataSource
                     }
                 }
             }
-            cell.bind(name: now.username, email: now.email, pos: indexPath.row, isAdded: isAdded)
+            cell.bind(name: now.username,
+                      email: now.email,
+                      pos: indexPath.row,
+                      isAdded: isAdded,
+                      id: now.id)
+            
             return cell
         } else {
             return UITableViewCell()
@@ -152,3 +203,43 @@ extension AddProfessorViewController: UITableViewDelegate, UITableViewDataSource
     }
 }
 
+extension AddProfessorViewController : AddProfessorCellDelegate {
+    func addProfessor(pos: Int) {
+        guard let professor = professores?[pos] else { return }
+        
+        let vc = showDialog()
+        vc.setupDialog(msg: "Deseja adicionar \(professor.username) na sua lista de professores?",
+                       iconType: .warning, hideCancel: false) {
+            vc.dismiss(animated: true, completion: nil)
+            self.state = .loading
+            self.viewModel.addProfessor(professor: professor) { (success, error) in
+                if let err = error {
+                    self.state = .error
+                } else {
+                    self.state = .addProfessor
+                }
+            }
+        }
+        vc.modalPresentationStyle = .overCurrentContext
+        self.present(vc, animated: true, completion: nil)
+
+    }
+    
+    func removeProfessor(id: String) {
+        let vc = showDialog()
+        vc.setupDialog(msg: "Deseja realmente excluir o professor da sua lista?",
+                       iconType: .warning, hideCancel: false) {
+            vc.dismiss(animated: true, completion: nil)
+            self.state = .loading
+            self.viewModel.delProfessor(id: id) { (success, error) in
+                if let err = error {
+                    self.state = .error
+                } else {
+                    self.state = .deleteProfessor
+                }
+            }
+        }
+        vc.modalPresentationStyle = .overCurrentContext
+        self.present(vc, animated: true, completion: nil)
+    }
+}

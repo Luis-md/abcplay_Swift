@@ -22,6 +22,8 @@ class ViewController: UIViewController {
             loading.stopLoading(vc: self)
         case .success:
             loading.stopLoading(vc: self)
+            self.emailTxtField.text = ""
+            self.passwordTextField.text = ""
             let vc = HomeViewController()
             self.navigationController?.pushViewController(vc, animated: true)
         case .loading:
@@ -30,7 +32,9 @@ class ViewController: UIViewController {
             loading.stopLoading(vc: self)
             let storyboard = UIStoryboard(name: "Dialog", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "DialogViewController") as! DialogViewController
-            vc.setupDialog(msg: msg, iconType: type)
+            vc.setupDialog(msg: msg, iconType: type) {
+                vc.dismiss(animated: true, completion: nil)
+            }
             vc.modalPresentationStyle = .overCurrentContext
             self.present(vc, animated: true, completion: nil)
         }

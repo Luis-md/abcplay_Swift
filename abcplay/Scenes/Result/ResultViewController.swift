@@ -45,8 +45,10 @@ class ResultViewController: UIViewController {
         }
     }
     @IBAction func goToHome(_ sender: Any) {
-        self.navigationController?.viewControllers = [HomeViewController()]
-        self.navigationController?.popToRootViewController(animated: true)
+        var currentVCStack = self.navigationController?.viewControllers
+        currentVCStack?.removeSubrange(1...5)
+        let vc = HomeViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

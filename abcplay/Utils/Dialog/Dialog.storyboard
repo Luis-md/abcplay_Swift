@@ -17,41 +17,54 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OSG-by-djK">
-                                <rect key="frame" x="40" y="373" width="334" height="160"/>
+                                <rect key="frame" x="40" y="355.5" width="334" height="195"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EVN-fw-hBT">
-                                        <rect key="frame" x="146" y="16" width="42" height="21"/>
+                                        <rect key="frame" x="146.5" y="16" width="41.5" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6nr-Ra-P7m">
-                                        <rect key="frame" x="16" y="61" width="302" height="20"/>
+                                        <rect key="frame" x="16" y="60.5" width="302" height="20"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ay5-DR-ewd">
-                                        <rect key="frame" x="40" y="113" width="254" height="31"/>
-                                        <color key="backgroundColor" red="0.1058823529" green="0.2156862745" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                        <state key="normal" title="OK">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btnPressed:" destination="U4t-wU-pv4" eventType="touchUpInside" id="znd-dB-jgb"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="CNR-Si-Hgg">
+                                        <rect key="frame" x="40" y="113" width="254" height="66"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhO-US-qYz">
+                                                <rect key="frame" x="0.0" y="0.0" width="254" height="31"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                <state key="normal" title="Cancelar"/>
+                                                <connections>
+                                                    <action selector="cancelPressed:" destination="U4t-wU-pv4" eventType="touchUpInside" id="Wh4-PO-MPT"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ay5-DR-ewd">
+                                                <rect key="frame" x="0.0" y="35" width="254" height="31"/>
+                                                <color key="backgroundColor" red="0.1058823529" green="0.2156862745" blue="0.52156862749999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                <state key="normal" title="Confirmar">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="btnPressed:" destination="U4t-wU-pv4" eventType="touchUpInside" id="znd-dB-jgb"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="CNR-Si-Hgg" firstAttribute="top" secondItem="6nr-Ra-P7m" secondAttribute="bottom" constant="32.5" id="14u-O8-bxP"/>
                                     <constraint firstItem="EVN-fw-hBT" firstAttribute="top" secondItem="OSG-by-djK" secondAttribute="top" constant="16" id="AJh-a7-FRs"/>
-                                    <constraint firstAttribute="trailing" secondItem="Ay5-DR-ewd" secondAttribute="trailing" constant="40" id="CYE-ur-aIH"/>
-                                    <constraint firstAttribute="bottom" secondItem="Ay5-DR-ewd" secondAttribute="bottom" constant="16" id="Fnz-Ww-uTN"/>
+                                    <constraint firstAttribute="trailing" secondItem="CNR-Si-Hgg" secondAttribute="trailing" constant="40" id="Jnb-Gf-kK1"/>
+                                    <constraint firstAttribute="bottom" secondItem="CNR-Si-Hgg" secondAttribute="bottom" constant="16" id="Oax-Ej-ML3"/>
                                     <constraint firstItem="6nr-Ra-P7m" firstAttribute="leading" secondItem="OSG-by-djK" secondAttribute="leading" constant="16" id="WZ3-eJ-dIR"/>
-                                    <constraint firstItem="Ay5-DR-ewd" firstAttribute="top" secondItem="6nr-Ra-P7m" secondAttribute="bottom" constant="32" id="axh-Cp-DFl"/>
-                                    <constraint firstItem="Ay5-DR-ewd" firstAttribute="leading" secondItem="OSG-by-djK" secondAttribute="leading" constant="40" id="bRL-fM-VgV"/>
                                     <constraint firstAttribute="trailing" secondItem="6nr-Ra-P7m" secondAttribute="trailing" constant="16" id="fvk-kn-bS4"/>
+                                    <constraint firstItem="CNR-Si-Hgg" firstAttribute="leading" secondItem="OSG-by-djK" secondAttribute="leading" constant="40" id="juL-mT-Gg6"/>
                                     <constraint firstItem="6nr-Ra-P7m" firstAttribute="top" secondItem="EVN-fw-hBT" secondAttribute="bottom" constant="24" id="lCL-fI-sA5"/>
                                     <constraint firstItem="EVN-fw-hBT" firstAttribute="centerX" secondItem="OSG-by-djK" secondAttribute="centerX" id="v4a-Gx-iMl"/>
                                 </constraints>
@@ -68,6 +81,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnStack" destination="CNR-Si-Hgg" id="JRn-47-NmT"/>
+                        <outlet property="cancelarBtn" destination="bhO-US-qYz" id="Uqy-LJ-mp3"/>
                         <outlet property="container" destination="OSG-by-djK" id="xq6-V0-Ta6"/>
                         <outlet property="msgLabel" destination="6nr-Ra-P7m" id="nD3-CF-BbB"/>
                         <outlet property="okBtn" destination="Ay5-DR-ewd" id="9P9-t6-SLG"/>

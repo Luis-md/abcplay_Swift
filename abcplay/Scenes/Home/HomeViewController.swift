@@ -22,11 +22,28 @@ class HomeViewController: UIViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         case .success(let userLog):
             loading.stopLoading(vc: self)
-            self.labelTitle.text = "Bem vindo ao ABC PLAY, \(userLog.username)"
-            stack.isHidden = false
+            if userLog.type.lowercased() == "estudante" {
+                self.labelTitle.text = "Bem vindo ao ABC PLAY, \(userLog.username)"
+                stack.isHidden = false
+            } else {
+                state = .professor
+            }
         case .loading:
             loading.startLoading(vc: self)
             stack.isHidden = false
+        case .professor:
+            let storyboard = UIStoryboard(name: "Dialog", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "DialogViewController") as! DialogViewController
+            vc.setupDialog(msg: "Olá, professor! Você deve utilizar o desktop para acompanhar desempenho dos seus alunos!", iconType: .warning) {
+                vc.dismiss(animated: true, completion: nil)
+                let domain = Bundle.main.bundleIdentifier!
+                UserDefaults.standard.removePersistentDomain(forName: domain)
+                UserDefaults.standard.synchronize()
+                self.navigationController?.popToRootViewController(animated: true)
+            }
+            vc.modalPresentationStyle = .overCurrentContext
+            self.present(vc, animated: true, completion: nil)
+
         case .error:
             loading.stopLoading(vc: self)
         }
@@ -96,12 +113,13 @@ class HomeViewController: UIViewController {
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 20)
         return btn
     }()
-
     
     let loading = LoadingView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Sair", style: .plain, target: self, action: #selector(logoutTapped))
+        self.navigationItem.rightBarButtonItem?.tintColor = UIColor.Colors.abcRed
         self.navigationItem.setHidesBackButton(true, animated: true)
         self.navigationItem.titleView = self.img
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.Colors.blueTitle]
@@ -125,7 +143,11 @@ class HomeViewController: UIViewController {
                 print(err.localizedDescription)
             } else {
                 if let userLog = user {
-                    self.state = .success(userLog)
+                    if userLog.type.lowercased() == "estudante" {
+                        self.state = .success(userLog)
+                    } else {
+                        self.state = .professor
+                    }
                 }
             }
         }
@@ -154,6 +176,19 @@ class HomeViewController: UIViewController {
         let vc = ProfessoresViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
+    @objc private func logoutTapped() {
+        let storyboard = UIStoryboard(name: "Dialog", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "DialogViewController") as! DialogViewController
+        vc.setupDialog(msg: "Deseja encerrar sua sessão no ABC Play?", iconType: .warning, hideCancel: false) {
+            vc.dismiss(animated: true, completion: nil)
+            let domain = Bundle.main.bundleIdentifier!
+            UserDefaults.standard.removePersistentDomain(forName: domain)
+            UserDefaults.standard.synchronize()
+            self.navigationController?.popToRootViewController(animated: true)
+        }
+        vc.modalPresentationStyle = .overCurrentContext
+        self.present(vc, animated: true, completion: nil)
+    }
 }
 
 extension HomeViewController {
@@ -162,6 +197,7 @@ extension HomeViewController {
     case ready([Assunto])
     case error
     case success(User)
+    case professor
   }
 }
 

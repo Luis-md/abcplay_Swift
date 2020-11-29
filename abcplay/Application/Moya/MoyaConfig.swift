@@ -15,6 +15,8 @@ enum MoyaConfig {
     case serie
     case getProfessores
     case resultado(title: String, acertos: Int, erros: Int)
+    case delProfessor(id: String)
+    case addProfessor(user: User, professor: Professor)
 }
 
 extension MoyaConfig: TargetType {
@@ -36,12 +38,16 @@ extension MoyaConfig: TargetType {
             return "/desempenho"
         case .getProfessores:
             return "/professores"
+        case .delProfessor(_):
+            return "/delProf"
+        case .addProfessor(_):
+            return "/addProfessor"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .register, .login, .resultado:
+        case .register, .login, .resultado, .delProfessor, .addProfessor:
             return .post
         default:
             return .get
@@ -60,7 +66,15 @@ extension MoyaConfig: TargetType {
             return .requestParameters(parameters: ["email": email, "password": password, "name": name, "type": "estudante"], encoding: JSONEncoding.default)
         case let .resultado(title, acertos, erros):
             return .requestParameters(parameters: ["title": title, "acertos": acertos, "erros": erros], encoding: JSONEncoding.default)
-
+        case let .delProfessor(id):
+            return .requestParameters(parameters: ["_id": id], encoding: JSONEncoding.default)
+        case let .addProfessor(user, professor):
+            if let desempenho = user.desempenho {
+                let json = convertDic(dic: desempenho)
+                return .requestParameters(parameters: ["_id": professor.id, "username": professor.username, "email": professor.email, "estudante": user.username, "desempenho": json], encoding: JSONEncoding.default)
+            } else {
+                return .requestParameters(parameters: ["_id": professor.id, "username": professor.username, "email": professor.email, "estudante": user.username], encoding: JSONEncoding.default)
+            }
         default:
             return .requestPlain
         }
@@ -76,6 +90,13 @@ extension MoyaConfig: TargetType {
             ]
         }
     }
-    
-    
+    private func convertDic(dic: [String:User.Desempenho]) -> String {
+        let encoder = JSONEncoder()
+        if let jsonData = try? encoder.encode(dic) {
+            if let jsonString = String(data: jsonData, encoding: .utf8) {
+                return jsonString
+            }
+        }
+        return ""
+    }
 }

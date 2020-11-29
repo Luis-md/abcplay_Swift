@@ -76,9 +76,13 @@ class ProfessoresViewController: UIViewController {
         self.layout()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.loadUser()
+    }
+    
     private func initialSetup() {
         self.loadUser()
-        self.hideKeyboardWhenTappedAround()
     }
     
     @objc private func addTapped() {

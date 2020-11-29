@@ -7,7 +7,16 @@
 //
 
 import UIKit
+
+protocol AddProfessorCellDelegate {
+    func addProfessor(pos: Int)
+    func removeProfessor(id: String)
+}
 class AddProfessorCell: UITableViewCell {
+    
+    var delegate: AddProfessorCellDelegate!
+    private var id: String = ""
+    private var pos: Int?
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -37,6 +46,7 @@ class AddProfessorCell: UITableViewCell {
         let label = UILabel()
         label.font = UIFont.fontAwesome(ofSize: 24, style: .solid)
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.isUserInteractionEnabled = true
         return label
     }()
 
@@ -58,17 +68,23 @@ class AddProfessorCell: UITableViewCell {
         return st
     }()
     
-    func bind(name: String, email: String, pos: Int, isAdded: Bool) {
+    func bind(name: String, email: String, pos: Int, isAdded: Bool, id: String) {
         self.container.backgroundColor = UIColor.Colors.blueTitle
         self.usernameLabel.text = name
         self.emailLabel.text = email
+        self.id = id
+        self.pos = pos
         
         if isAdded {
             removeLabel.text = String.fontAwesomeIcon(name: .userMinus)
             removeLabel.textColor = UIColor.Colors.abcRed
+            let tap = UITapGestureRecognizer(target: self, action: #selector(self.removeProfessorAction))
+            removeLabel.addGestureRecognizer(tap)
         } else {
             removeLabel.text = String.fontAwesomeIcon(name: .userPlus)
             removeLabel.textColor = UIColor.Colors.abcGreen
+            let tap = UITapGestureRecognizer(target: self, action: #selector(self.addProfessorAction))
+            removeLabel.addGestureRecognizer(tap)
         }
     }
     
@@ -76,8 +92,18 @@ class AddProfessorCell: UITableViewCell {
         self.configLayout()
     }
     
+    @objc private func addProfessorAction() {
+        if let position = pos {
+            self.delegate.addProfessor(pos: position)
+        }
+    }
+    
+    @objc private func removeProfessorAction() {
+        self.delegate.removeProfessor(id: self.id)
+    }
+    
     private func configLayout() {
-        self.addSubview(container)
+        self.contentView.addSubview(container)
         self.container.addSubview(stack)
         self.container.addSubview(removeLabel)
         self.stack.addArrangedSubview(usernameLabel)
@@ -85,10 +111,10 @@ class AddProfessorCell: UITableViewCell {
         self.backgroundColor = .clear
         
         NSLayoutConstraint.activate([
-            self.container.topAnchor.constraint(equalTo: self.topAnchor, constant: 8),
-            self.container.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -16),
-            self.container.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -8),
-            self.container.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 16),
+            self.container.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 8),
+            self.container.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -16),
+            self.container.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor, constant: -8),
+            self.container.leftAnchor.constraint(equalTo: self.contentView.leftAnchor, constant: 16),
             
             self.removeLabel.centerYAnchor.constraint(equalTo: self.container.centerYAnchor),
             self.removeLabel.rightAnchor.constraint(equalTo: self.container.rightAnchor, constant: -16),

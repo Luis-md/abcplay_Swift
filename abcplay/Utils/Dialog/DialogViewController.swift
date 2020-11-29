@@ -14,11 +14,15 @@ class DialogViewController: UIViewController {
     @IBOutlet weak var msgLabel: UILabel!
     @IBOutlet weak var okBtn: UIButton!
     @IBOutlet weak var container: UIView!
+    @IBOutlet weak var cancelarBtn: UIButton!
+    @IBOutlet weak var btnStack: UIStackView!
     
-    var iconFont: UIFont?
-    var textIcon: String?
-    var textMsg: String?
-    var iconColor: UIColor?
+    private var iconFont: UIFont?
+    private var textIcon: String?
+    private var textMsg: String?
+    private var iconColor: UIColor?
+    private var action = {}
+    private var hideCancel: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,13 +37,18 @@ class DialogViewController: UIViewController {
         self.titleLabel.font = iconFont
         self.titleLabel.textColor = iconColor
         self.msgLabel.text = textMsg
+        if hideCancel {
+            btnStack.removeArrangedSubview(self.cancelarBtn)
+        }
     }
     
-    func setupDialog(msg: String, iconType: IconType) {
-        self.iconFont = UIFont.fontAwesome(ofSize: 22, style: .solid)
+    func setupDialog(msg: String, iconType: IconType, hideCancel: Bool = true, action: @escaping () -> Void) {
+        self.iconFont = UIFont.fontAwesome(ofSize: 28, style: .solid)
         self.textIcon = setIcon(icon: iconType)
         self.iconColor = setIconColor(icon: iconType)
+        self.action = action
         self.textMsg = msg
+        self.hideCancel = hideCancel
     }
     
     private func setIcon(icon: IconType) -> String {
@@ -53,8 +62,11 @@ class DialogViewController: UIViewController {
         }
     }
     
-    @IBAction func btnPressed(_ sender: Any) {
+    @IBAction func cancelPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    @IBAction func btnPressed(_ sender: Any) {
+        self.action()
     }
     private func setIconColor(icon: IconType) -> UIColor {
         switch icon {

@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -100,7 +100,7 @@
                         <outlet property="confirmPassword" destination="nvH-1J-gAo" id="xEX-jz-pEg"/>
                         <outlet property="emailTxtField" destination="uH8-5C-TK1" id="FhX-D1-42l"/>
                         <outlet property="passwordTxtField" destination="WuN-wG-AGC" id="agV-7I-39I"/>
-                        <outlet property="userTxtField" destination="uH8-5C-TK1" id="iqe-Iw-78d"/>
+                        <outlet property="userTxtField" destination="yu7-9c-lYs" id="e8H-De-dqw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zJX-oY-vbg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
